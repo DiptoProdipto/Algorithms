@@ -3,10 +3,8 @@
 #include<iostream>
 using namespace std;
 
-int BinarySearch(int a[], int n, int key)
+int BinarySearch(int a[], int l, int h, int key)
 {
-	int l=0, h=n-1;
-
 	while(l<=h)
 	{
 		int mid = (l+h)/2;
@@ -17,15 +15,14 @@ int BinarySearch(int a[], int n, int key)
 		else
 			l = mid+1;
 	}
-	return 0;
+	return -1;
 }
 
 int main()
 {
-	int n, i, key;
+	int a[100], n, i, key;
 	cout<<"How many elements: ";
 	cin>>n;
-	int a[5];
 	cout<<"Enter the elements: ";
 	for(i=0;i<n;i++)
 	{
@@ -34,9 +31,9 @@ int main()
 	cout<<"Enter the element that you wanna search: ";
 	cin>>key;
 
-	int r = BinarySearch(a,n,key);
+	int r = BinarySearch(a, 0, n-1, key);
 
-	if(r==0)
+	if(r==-1)
 		cout<<"Element is not present in the list"<<endl;
 	else
 		cout<<"Element is at "<<r+1<<" index"<<endl;
