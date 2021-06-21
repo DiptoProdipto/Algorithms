@@ -1,2 +1,2 @@
 # Algorithms
-This repository contains Algorithm codes
+This repository contains various Algorithm programs.
